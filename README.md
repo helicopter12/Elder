@@ -1,28 +1,39 @@
 # Elder
 An autonomous Elder tree chopping and banking system.
 
+Requirements:
 
-Required:
-1. A hatchet
-2. Unlocked lodestones for:
-	a. Dryanor
-	b. Varrock
-	c. Eagle's Peak
-	d. Seer's Village
-	e. Edgeville
-	f. Catheberry
-3. Level 90+ Wood Cutting
+    A Hatchet
+    Unlock Lodestones for the following locations:
+        Draynor
+        Varrock
+        Eagle's Peak
+        Seer's Village
+        Edgeville
+        Catheberry
+    Level 90+ Woodcutting (99 Recommended)
 
+Script Features:
 
-Features:
-1. Randomized locations and ordering - Picks 4 random locations in a random order to chop and then periodically switches locations in/out of the list (anti-pattern)
-2. Smart chopping
-	a. Doesn't spam click
-	b. Camera anti-ban
-	c. If inventory is almost full it will bank before going to the next location
-3. Dead tree timer - Keeps a visible timer of dead trees and when they will respawn
-4. All teleportation is done by lodestones which saves times and money
+    Randomized locations and ordering - Picks 4 random locations in a random order to chop and then periodically switches locations in/out of the list (anti-pattern)
+        Further Explanation: Say you start with the following locations: "Varrock" and "Draynor 1", after leaving either of those locations there is a ~10% chance that another location out of the six supported locations could be switched in. So now your elder tree list could be "E-Peak" and "Draynor 1", or it could remain unchanged. This anti-pattern helps to eliminate repeated steps and procedures.
+    Smart Chopping System
+        Eliminates spam clicking
+        Features camera, and examination anti-ban
+        Decides whether or not to bank before continuing to the next location
+    Dead Tree Timer - Keeps a visible countdown timer of when a location's Elder will re-spawn.
+    Teleportation via Lodestones - Saves time over running and cuts down on teleportation costs.
+    Simple paint that displays the timers, script state/status, and profit.
+    Fully autonomous - No settings to play with just start with the required materials where ever you are.
 
 
 Recommended Settings:
-Computer dependant but if you experiance lagg then set it to "Min"
+
+    Computer dependent - but if you experience lagg then set your video settings to "Minimum"
+
+
+Planned Future Features:
+
+    Summoning capabilities? (Beaver +2 WC level -  Not sure if this would hurt or help profit)
+    A more intelligent anti-ban system and upgraded anti-pattern
+    Optimized handling for better speed and stability
