@@ -1,4 +1,4 @@
-//Project: Elder
+//Project: Elder Log Collector
 //Date: 12/20/15
 //Author: Ryan(Helicopter12)
 package helicopter12.scripts;
@@ -10,7 +10,7 @@ import org.powerbot.script.rt6.Component;
 import java.awt.*;
 import org.powerbot.script.Random;
 
-@Script.Manifest(name="Elder", properties = "author=Helicopter12; topic=1296549; client=6;", description="An autonomous Elder tree chopping and banking system")
+@Script.Manifest(name="Elder Log Collector", properties = "author=Helicopter12; topic=1296549; client=6;", description="An autonomous Elder tree chopping and banking system used for money making")
 public class Elder extends PollingScript<ClientContext> implements PaintListener, MessageListener {
     private String status = "Starting...";
     private final int elderID = 87508;
