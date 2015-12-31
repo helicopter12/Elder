@@ -1,17 +1,17 @@
-//Project: Elder
+//Project: Elder Log Collector
 //Date: 12/20/15
 //Author: Ryan(Helicopter12)
-package me.ryan.scripts;
+package helicopter12.scripts;
 
 import org.powerbot.script.*;
-import org.powerbot.script.Random;
-import org.powerbot.script.rt6.ClientContext;
 import org.powerbot.script.rt6.*;
+import org.powerbot.script.rt6.ClientContext;
 import org.powerbot.script.rt6.Component;
 import java.awt.*;
+import org.powerbot.script.Random;
 
-@Script.Manifest(name="Elder", description="An autonomous Elder tree chopping and banking system")
-public class Elder extends PollingScript<ClientContext> implements PaintListener, MessageListener{
+@Script.Manifest(name="Elder Log Collector", properties = "author=Helicopter12; topic=1296549; client=6;", description="An autonomous Elder tree chopping and banking system used for money making")
+public class Elder extends PollingScript<ClientContext> implements PaintListener, MessageListener {
     private String status = "Starting...";
     private final int elderID = 87508;
     private final int  deadElderID = 87509, elderLogID = 29556;
@@ -46,10 +46,10 @@ public class Elder extends PollingScript<ClientContext> implements PaintListener
 
         //Check for empty inventory
         if(shouldBank()){
-                //Inventory full - go deposit everything
-                depositAll = true;
-                step = 6;
-                status = "Inventory Full";
+            //Inventory full - go deposit everything
+            depositAll = true;
+            step = 6;
+            status = "Inventory Full";
         }
 
         //Randomize the locations and patterns
@@ -368,16 +368,16 @@ public class Elder extends PollingScript<ClientContext> implements PaintListener
         if(rnd == 2) {
             status = "Shifting Pattern";
             int missing1 = -1, missing2 = -1;
-                for (int num = 0; num < 6; num++){
-                    if(randomizedLocations[0] == num || randomizedLocations[1] == num || randomizedLocations[2] == num || randomizedLocations[3] == num) {
-                    }else{
-                        if (missing1 == -1) {
-                            missing1 = num;
-                        } else {
-                            missing2 = num;
-                        }
+            for (int num = 0; num < 6; num++){
+                if(randomizedLocations[0] == num || randomizedLocations[1] == num || randomizedLocations[2] == num || randomizedLocations[3] == num) {
+                }else{
+                    if (missing1 == -1) {
+                        missing1 = num;
+                    } else {
+                        missing2 = num;
                     }
                 }
+            }
             log.info("Unused: " + missing1 + " + " + missing2);
             final int rnd2 = Random.nextInt(0,2);
             log.info("Random int: " + rnd2);
@@ -424,14 +424,14 @@ public class Elder extends PollingScript<ClientContext> implements PaintListener
                 status = "Anti-ban(2)";
                 final GameObject obj = ctx.objects.select().within(7).poll();
                 if(obj.valid() && obj.inViewport()){
-                        obj.interact("Examine", obj.name());
+                    obj.interact("Examine", obj.name());
                 }
                 break;
             case 30:
                 status = "Anti-ban(3)";
                 final Npc npc =  ctx.npcs.select().within(7).poll();
                 if(npc.valid() && npc.inViewport()){
-                        npc.interact("Examine", npc.name());
+                    npc.interact("Examine", npc.name());
                 }
                 break;
             case 40:
